@@ -1,14 +1,18 @@
-nelmio_api_doc:
+nelmio_api_doc:    
     documentation:
         info:
             title: Notes API
             description: API для управления заметками
             version: 1.0.0
-        components:
-            security_schemes:
-                Bearer:
+        servers:
+            - url: http://localhost:8000
+              description: Локальный сервер
+        components:     
+            securitySchemes:
+                BearerAuth:
                     type: http
                     scheme: bearer
+                    bearerFormat: JWT
     areas:
-        path_patterns:
-            - ^/api(?!/doc$) 
+        path_patterns:         
+            - ^/api(?!/doc$)
